@@ -6,14 +6,13 @@ import {
 } from '@reduxjs/toolkit';
 
 const initialState: any[] = [];
-const initialLoading: {} = {};
 
 const InitSlice = createSlice({
 	name: 'InitialSlice',
 	initialState,
 	reducers: {
 		Initialise: (state, action) => {
-			state = action.payload;
+			state = [...state, ...action.payload];
 		},
 		Update: (state, action) => {
 			state = action.payload;
@@ -21,9 +20,9 @@ const InitSlice = createSlice({
 	},
 });
 
-const LoadingSlice = createSlice({
-	name: 'Loading',
-	initialState: { value: false },
+const StoreLoading = createSlice({
+	name: 'StoreLoading',
+	initialState: { value: true },
 	reducers: {
 		ToggleLoading: (state) => {
 			state.value = !state.value;
@@ -32,9 +31,9 @@ const LoadingSlice = createSlice({
 });
 
 export const { Initialise, Update } = InitSlice.actions;
-export const { ToggleLoading } = LoadingSlice.actions;
+export const { ToggleLoading } = StoreLoading.actions;
 export const store = configureStore({
-	reducer: { InitialSlice: InitSlice.reducer, Loading: LoadingSlice.reducer },
+	reducer: { InitialSlice: InitSlice.reducer, Loading: StoreLoading.reducer },
 });
 
 export type AppDispatch = typeof store.dispatch;
