@@ -1,22 +1,25 @@
 import './Styles/Main.scss';
 import React, { useEffect, useState } from 'react';
+import { Routes, Route, useNavigate } from 'react-router-dom';
+import { NewsRetriever } from './API/API';
 import LoadingPage from './Pages/LoadingPage';
-import { Routes, Route } from 'react-router-dom';
 import Dashboard from './Pages/Dashboard';
 import Settings from './Pages/Settings';
-import { NewsRetriever } from './API/API';
+import Password from './Pages/Password';
 
 function App() {
 	const [Loading, setLoading] = useState<boolean>(true);
+	const navigate = useNavigate();
 
 	const Initialise = async () => {
-		let News = await NewsRetriever();
-		console.log(News);
+		navigate('password');
 		setLoading(false);
 	};
 
 	useEffect(() => {
-		Initialise();
+		setTimeout(() => {
+			Initialise();
+		}, 3000);
 	}, []);
 
 	return (
@@ -27,6 +30,7 @@ function App() {
 				<>
 					<Routes>
 						<Route path="/" element={<Dashboard />} />
+						<Route path="password" element={<Password />} />
 						<Route path="settings" element={<Settings />} />
 					</Routes>
 				</>

@@ -45,6 +45,9 @@
 	&.just-center {
 		justify-content: center;
 	}
+	&.just-even {
+		justify-content: space-evenly;
+	}
 	&.col {
 		flex-direction: column;
 	}
