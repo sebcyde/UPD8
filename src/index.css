@@ -1,6 +1,12 @@
 html,
 body,
-#root {
+#root,
+.App {
 	margin: 0;
 	padding: 0px;
+	background-color: #020204;
+	color: #22b455;
+	font-family: 'Play', sans-serif;
+	height: 100vh;
+	width: 100vw;
 }
