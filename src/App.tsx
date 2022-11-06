@@ -79,7 +79,7 @@ function App() {
 
 	return (
 		<div className="App">
-			{Loading.value == true ? (
+			{Loading.value == false ? (
 				<LoadingPage />
 			) : (
 				<>
