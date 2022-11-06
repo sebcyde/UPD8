@@ -75,7 +75,7 @@ function App() {
 		console.log('Store Values', StoreValues);
 		console.log('Loading', Loading.value);
 		console.log('Portfolio', Portfolio);
-	}, [StoreValues, Loading.value, Portfolio]);
+	}, [Portfolio]);
 
 	return (
 		<div className="App">

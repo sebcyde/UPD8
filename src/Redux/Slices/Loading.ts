@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = { value: false };
+const initialState = { value: true };
 
 export const StoreLoading = createSlice({
 	name: 'StoreLoading',
