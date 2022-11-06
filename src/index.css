@@ -9,4 +9,6 @@ body,
 	font-family: 'Play', sans-serif;
 	height: 100vh;
 	width: 100vw;
+	position: fixed;
+	overflow-y: scroll;
 }
