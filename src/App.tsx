@@ -12,12 +12,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { ExampleTicker, DefaultPort } from './Types/Ticker';
 import LoadingPage from './Pages/LoadingPage';
 import styled from 'styled-components';
-import Dashboard from './Pages/Menu';
+import Dashboard from './Pages/Dashboard';
 import Settings from './Pages/Settings';
 import Password from './Pages/Password';
 import axios from 'axios';
 import Search from './Pages/Search';
 import Menu from './Pages/Menu';
+import News from './Pages/News';
+import Japanese from './Pages/Japanese';
 // import Translate from './Pages/Translate';
 
 const PullButton = styled.button`
@@ -116,13 +118,23 @@ function App() {
 						>
 							Pull Data
 						</PullButton>
+						<PullButton
+							onClick={() => {
+								navigate('/');
+							}}
+						>
+							To Menu
+						</PullButton>
 					</div>
 
 					<Routes>
 						<Route path="/" element={<Menu />} />
+						<Route path="dashboard" element={<Dashboard />} />
 						<Route path="password" element={<Password />} />
 						<Route path="settings" element={<Settings />} />
 						<Route path="search" element={<Search />} />
+						<Route path="news" element={<News />} />
+						<Route path="japanese" element={<Japanese />} />
 					</Routes>
 				</>
 			)}

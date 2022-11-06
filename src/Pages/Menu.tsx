@@ -1,4 +1,5 @@
 import React, { CSSProperties } from 'react';
+import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 import BG1 from '../Assets/Sci-Fi/Blue/Hud7.png';
 
@@ -30,12 +31,50 @@ const DashboardMenuItem = styled.div`
 `;
 
 function Menu() {
+	const navigate = useNavigate();
+
+	const Route = (Location: string) => {
+		navigate(`/${Location}`);
+	};
+
 	return (
 		<DashboardContainer>
-			<DashboardMenuItem>MenuContainers 1</DashboardMenuItem>
-			<DashboardMenuItem>MenuContainers 2</DashboardMenuItem>
-			<DashboardMenuItem>MenuContainers 3</DashboardMenuItem>
-			<DashboardMenuItem>MenuContainers 4</DashboardMenuItem>
+			<DashboardMenuItem
+				onClick={() => {
+					Route('dashboard');
+				}}
+			>
+				Dashboard
+			</DashboardMenuItem>
+			<DashboardMenuItem
+				onClick={() => {
+					Route('search');
+				}}
+			>
+				Search
+			</DashboardMenuItem>
+			<DashboardMenuItem
+				onClick={() => {
+					Route('news');
+				}}
+			>
+				News
+			</DashboardMenuItem>
+			<DashboardMenuItem
+				onClick={() => {
+					Route('Japanese');
+				}}
+			>
+				Japanese
+			</DashboardMenuItem>
+
+			<DashboardMenuItem
+				onClick={() => {
+					Route('settings');
+				}}
+			>
+				Settings
+			</DashboardMenuItem>
 		</DashboardContainer>
 	);
 }
