@@ -1,0 +1,6 @@
+USNews = 'https://newsapi.org/v2/top-headlines?country=us&apiKey=API_KEY';
+
+TopicNews = 'https://newsapi.org/v2/everything?q=Apple&from=2022-10-31&sortBy=popularity&apiKey=API_KEY';
+
+
+let X = https://newsapi.org/v2/top-headlines?country=us&apiKey=${KEY}

@@ -16,7 +16,7 @@ import Settings from './Pages/Settings';
 import Password from './Pages/Password';
 import axios from 'axios';
 import Search from './Pages/Search';
-import Translate from './Pages/Translate';
+// import Translate from './Pages/Translate';
 
 function App() {
 	let Portfolio = useSelector((state: any) => state.Portfolio);
@@ -66,6 +66,7 @@ function App() {
 
 	useEffect(() => {
 		setTimeout(() => {
+			// turn off when not in use
 			// StartUp();
 		}, 1500);
 	}, []);
@@ -83,9 +84,10 @@ function App() {
 			) : (
 				<>
 					<Routes>
-						<Route path="/" element={<Translate />} />
+						<Route path="/" element={<Dashboard />} />
 						<Route path="password" element={<Password />} />
 						<Route path="settings" element={<Settings />} />
+						<Route path="search" element={<Search />} />
 					</Routes>
 				</>
 			)}
