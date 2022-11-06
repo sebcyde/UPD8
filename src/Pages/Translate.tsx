@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Debounce } from '../Functions/Debounce';
+// import { Debounce } from '../Functions/Debounce';
 
 function Translate() {
 	const [Query, setQuery] = useState<string | undefined>('');
@@ -23,7 +23,7 @@ function Translate() {
 	// };
 
 	useEffect(() => {
-		Debounce(translate(Query), 1000);
+		// Debounce(translate(Query), 1000);
 	}, [Query]);
 
 	return (

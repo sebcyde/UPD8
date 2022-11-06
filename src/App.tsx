@@ -106,6 +106,7 @@ function App() {
 						style={{
 							marginTop: '20px',
 							position: 'fixed',
+							bottom: '0px',
 							width: '100%',
 							display: 'flex',
 							justifyContent: 'center',
