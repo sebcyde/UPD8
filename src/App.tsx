@@ -1,53 +1,82 @@
 import './Styles/Main.scss';
+import {
+	Initialise,
+	store,
+	ToggleLoading,
+	UpdatePort,
+} from '../src/Redux/store';
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, useNavigate } from 'react-router-dom';
-import { NewsRetriever } from './API/API';
-import axios from 'axios';
+import { NewsKey, PortKey } from './API/Keys';
+import { useDispatch, useSelector } from 'react-redux';
+import { ExampleTicker, DefaultPort } from './Types/Ticker';
 import LoadingPage from './Pages/LoadingPage';
 import Dashboard from './Pages/Dashboard';
 import Settings from './Pages/Settings';
 import Password from './Pages/Password';
-import { useDispatch, useSelector } from 'react-redux';
-import { Initialise, ToggleLoading } from './Redux/store';
+import axios from 'axios';
 
 function App() {
-	let Loading = useSelector((state: any) => state.value);
+	let Portfolio = useSelector((state: any) => state.Portfolio);
+	let Loading = useSelector((state: any) => state.Loading);
 	let StoreValues = useSelector((state: any) => state.InitialSlice);
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
 
 	const StartUp = async () => {
 		console.log('Initialising...');
-		let KEY: string = 'e0dfda639a5a4f9f95e246f7a789d9a6';
-		const FrontLoad = await axios
-			.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${KEY}`)
-			// .get(`https://pokeapi.co/api/v2/pokemon/ditto`)
+		const FrontLoadNews = await axios
+			.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${NewsKey}`)
 			.then((response) => {
 				console.log(response.data);
 				dispatch(Initialise(response.data.articles));
 			})
 			.then(() => {
-				// navigate('password');
+				if (Portfolio.length > 0) {
+					Portfolio.forEach(async (Ticker: {}, i: number) => {
+						let Update = await axios
+							.get(
+								`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${Portfolio[i].symbol}&apikey=${PortKey}`
+							)
+							.then((response) => {
+								let Data = response.data;
+								dispatch(UpdatePort(Data));
+							});
+					});
+				} else {
+					DefaultPort.forEach(async (Ticker: ExampleTicker) => {
+						let Update = await axios
+							.get(
+								`https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol=${Ticker['01. symbol']}&apikey=${PortKey}`
+							)
+							.then((response) => {
+								let Data = response.data;
+								dispatch(UpdatePort(Data));
+							});
+					});
+					console.log('Portfolio Else Statement');
+				}
+			})
+			.then(() => {
 				dispatch(ToggleLoading());
-				console.log(Loading);
-				console.log(StoreValues);
 			});
 	};
 
 	useEffect(() => {
 		setTimeout(() => {
-			StartUp();
-		}, 3000);
+			// StartUp();
+		}, 1500);
 	}, []);
 
 	useEffect(() => {
 		console.log('Store Values', StoreValues);
-		console.log('Loading', Loading);
-	}, [StoreValues, Loading]);
+		console.log('Loading', Loading.value);
+		console.log('Portfolio', Portfolio);
+	}, [StoreValues, Loading.value, Portfolio]);
 
 	return (
 		<div className="App">
-			{Loading ? (
+			{Loading.value == true ? (
 				<LoadingPage />
 			) : (
 				<>

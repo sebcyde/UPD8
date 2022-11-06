@@ -5,6 +5,7 @@ import {
 	createSlice,
 } from '@reduxjs/toolkit';
 import { StoreLoading } from './Slices/Loading';
+import { Portfolio } from './Slices/Portfolio';
 
 const initialState: any[] = [];
 
@@ -13,10 +14,10 @@ const InitSlice = createSlice({
 	initialState,
 	reducers: {
 		Initialise: (state, action) => {
-			return [...state, ...action.payload];
+			return [...action.payload];
 		},
 		Update: (state, action) => {
-			return action.payload;
+			return [...state, ...action.payload];
 		},
 	},
 });
@@ -25,6 +26,7 @@ export const store = configureStore({
 	reducer: {
 		InitialSlice: InitSlice.reducer,
 		Loading: StoreLoading.reducer,
+		Portfolio: Portfolio.reducer,
 	},
 });
 
@@ -39,3 +41,5 @@ export type AppThunk<ReturnType = void> = ThunkAction<
 
 export const { Initialise, Update } = InitSlice.actions;
 export const { ToggleLoading } = StoreLoading.actions;
+export const { RetrievePort, UpdatePort, RemoveElement, AddElement } =
+	Portfolio.actions;
