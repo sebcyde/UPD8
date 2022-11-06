@@ -15,6 +15,8 @@ import Dashboard from './Pages/Dashboard';
 import Settings from './Pages/Settings';
 import Password from './Pages/Password';
 import axios from 'axios';
+import Search from './Pages/Search';
+import Translate from './Pages/Translate';
 
 function App() {
 	let Portfolio = useSelector((state: any) => state.Portfolio);
@@ -81,7 +83,7 @@ function App() {
 			) : (
 				<>
 					<Routes>
-						<Route path="/" element={<Dashboard />} />
+						<Route path="/" element={<Translate />} />
 						<Route path="password" element={<Password />} />
 						<Route path="settings" element={<Settings />} />
 					</Routes>
