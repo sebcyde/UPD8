@@ -11,7 +11,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Initialise, ToggleLoading } from './Redux/store';
 
 function App() {
-	let Loading = useSelector((state: any) => state.Loading.value);
+	let Loading = useSelector((state: any) => state.value);
 	let StoreValues = useSelector((state: any) => state.InitialSlice);
 	const navigate = useNavigate();
 	const dispatch = useDispatch();
@@ -21,13 +21,14 @@ function App() {
 		let KEY: string = 'e0dfda639a5a4f9f95e246f7a789d9a6';
 		const FrontLoad = await axios
 			.get(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${KEY}`)
+			// .get(`https://pokeapi.co/api/v2/pokemon/ditto`)
 			.then((response) => {
 				console.log(response.data);
-				// dispatch({ type: 'Initialise', payload: response.data.articles });
+				dispatch(Initialise(response.data.articles));
 			})
 			.then(() => {
 				// navigate('password');
-				dispatch({ type: ToggleLoading });
+				dispatch(ToggleLoading());
 				console.log(Loading);
 				console.log(StoreValues);
 			});
@@ -38,6 +39,11 @@ function App() {
 			StartUp();
 		}, 3000);
 	}, []);
+
+	useEffect(() => {
+		console.log('Store Values', StoreValues);
+		console.log('Loading', Loading);
+	}, [StoreValues, Loading]);
 
 	return (
 		<div className="App">
