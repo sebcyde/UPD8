@@ -4,13 +4,16 @@ body,
 .App {
 	margin: 0;
 	padding: 0px;
-	background-color: #020204;
+	background-color: black;
 	color: #39c7f4;
 	font-family: 'Play', sans-serif;
 	height: 100vh;
 	width: 100vw;
 	position: fixed;
 	overflow-y: scroll;
+	background-image: url('./Assets/Sci-Fi//Backgrounds/Menu1.png');
+	background-position: center;
+	background-size: cover;
 }
 .App > div:nth-of-type(1) {
 	z-index: 2;

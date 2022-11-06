@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import BG1 from '../Assets/Sci-Fi/Blue/Hud7.png';
+import BG1 from '../Assets/Sci-Fi/Blue/Hud4.png';
 
 export const DashboardContainer = styled.div`
 	height: 100%;
@@ -12,15 +12,13 @@ export const DashboardContainer = styled.div`
 
 export const DashboardMenuItem = styled.div`
 	height: 100px;
-	width: 80%;
+	width: 65%;
 	display: flex;
 	flex-direction: column;
-	// background-color: green;
 	color: white;
 	align-items: center;
 	justify-content: center;
-	margin: 20px;
-	// border: 1px solid red;
+	margin: 15px;
 	background-image: url(${BG1});
 	background-size: 80%;
 	background-position: center;
