@@ -10,6 +10,7 @@ import { Routes, Route, useNavigate } from 'react-router-dom';
 import { NewsKey, PortKey } from './API/Keys';
 import { useDispatch, useSelector } from 'react-redux';
 import { ExampleTicker, DefaultPort } from './Types/Ticker';
+import { PullButton } from './Styles/AllComponents';
 import LoadingPage from './Pages/LoadingPage';
 import styled from 'styled-components';
 import Dashboard from './Pages/Dashboard';
@@ -21,16 +22,6 @@ import Menu from './Pages/Menu';
 import News from './Pages/News';
 import Japanese from './Pages/Japanese';
 // import Translate from './Pages/Translate';
-
-const PullButton = styled.button`
-	padding: 10px 30px;
-	background-color: blue;
-	color: white;
-	border-radius: 10px;
-	border: none;
-	margin: 20px;
-	border: 1px solid white;
-`;
 
 function App() {
 	let Portfolio = useSelector((state: any) => state.Portfolio);
