@@ -5,7 +5,7 @@ function LoadingPage() {
 	return (
 		<div className="w-100 h-100 flex just-center align-center">
 			<ClipLoader
-				color={'#22b455'}
+				color={'#39C7F4'}
 				aria-label="Loading Spinner"
 				data-testid="loader"
 			/>

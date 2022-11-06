@@ -11,12 +11,24 @@ import { NewsKey, PortKey } from './API/Keys';
 import { useDispatch, useSelector } from 'react-redux';
 import { ExampleTicker, DefaultPort } from './Types/Ticker';
 import LoadingPage from './Pages/LoadingPage';
-import Dashboard from './Pages/Dashboard';
+import styled from 'styled-components';
+import Dashboard from './Pages/Menu';
 import Settings from './Pages/Settings';
 import Password from './Pages/Password';
 import axios from 'axios';
 import Search from './Pages/Search';
+import Menu from './Pages/Menu';
 // import Translate from './Pages/Translate';
+
+const PullButton = styled.button`
+	padding: 10px 30px;
+	background-color: blue;
+	color: white;
+	border-radius: 10px;
+	border: none;
+	margin: 20px;
+	border: 1px solid white;
+`;
 
 function App() {
 	let Portfolio = useSelector((state: any) => state.Portfolio);
@@ -77,14 +89,37 @@ function App() {
 		console.log('Portfolio', Portfolio);
 	}, [Portfolio]);
 
+	const PullData = () => {
+		console.log('StoreValues:', StoreValues);
+		console.log('Portfolio:', Portfolio);
+	};
+
 	return (
 		<div className="App">
 			{Loading.value == false ? (
 				<LoadingPage />
 			) : (
 				<>
+					<div
+						style={{
+							marginTop: '20px',
+							position: 'fixed',
+							width: '100%',
+							display: 'flex',
+							justifyContent: 'center',
+						}}
+					>
+						<PullButton
+							onClick={() => {
+								PullData();
+							}}
+						>
+							Pull Data
+						</PullButton>
+					</div>
+
 					<Routes>
-						<Route path="/" element={<Dashboard />} />
+						<Route path="/" element={<Menu />} />
 						<Route path="password" element={<Password />} />
 						<Route path="settings" element={<Settings />} />
 						<Route path="search" element={<Search />} />
