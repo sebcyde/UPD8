@@ -1,74 +1,11 @@
 import React, { useState, useCallback, useMemo } from 'react';
-import InputBG from '../Assets/Sci-Fi/Blue/Hud8.png';
+import { SearchInput, ArticleContainer } from '../Styles/AllComponents';
 // import { Debounce } from '../Functions/Debounce';
 import styled from 'styled-components';
 import { NewsKey } from '../API/Keys';
 import { debounce } from 'debounce';
 import { Article } from '../Types/Article';
 import axios from 'axios';
-
-const SearchInput = styled.input`
-	background-image: url(${InputBG});
-	background-size: 100% 100%;
-	background-position: center;
-	background-repeat: no-repeat;
-	background-color: transparent;
-	width: 90%;
-	text-align: center;
-	height: 100%;
-	border: none;
-	margin: 0px 20px;
-	color: #39c7f4;
-	font-size: 25px;
-	outline: none;
-	overflow: hidden;
-	&::placeholder {
-		color: #39c7f4;
-	}
-`;
-
-const ArticleContainer = styled.div`
-	border: 1px solid white;
-	margin: 10px 20px;
-	padding: 10px;
-	color: #39c7f4;
-
-	> span {
-		width: 100%;
-		display: flex;
-		height: fit-content;
-		align-items: center;
-		justify-content: space-between;
-		padding: 5px 0px;
-
-		> span {
-			display: flex;
-			width: 60%;
-			margin: 0px;
-			height: 100%;
-			h4 {
-				font-size: 20px;
-				height: 100%;
-				margin: 0px;
-				white-space: nowrap;
-				text-overflow: ellipsis;
-			}
-		}
-
-		p {
-			margin: 0px;
-		}
-	}
-
-	h3 {
-		width: 95%;
-		font-size: 17px;
-		overflow: hidden;
-		text-overflow: ellipsis;
-		white-space: nowrap;
-		margin: 0px;
-	}
-`;
 
 function Search() {
 	const [Type, setType] = useState<string>('News');
@@ -107,7 +44,7 @@ function Search() {
 					display: 'flex',
 					justifyContent: 'center',
 					height: '150px',
-					backgroundColor: 'black',
+					backgroundColor: 'transparent',
 				}}
 			>
 				<SearchInput
