@@ -1,8 +1,18 @@
 import styled from 'styled-components';
-import BG1 from '../Assets/Sci-Fi/Blue/Hud4.png';
+import BG1 from '../Assets/Sci-Fi/Blue/Hud7.png';
 import InputBG from '../Assets/Sci-Fi/Blue/Hud7.png';
 import PullButtonBG from '../Assets/Sci-Fi/Blue/Hud7.png';
 // import LoadingBG from '../Assets/Sci-Fi/Blue/Hud7.png';
+
+export const DashboardHeaderContainer = styled.div`
+	background-color: black;
+	height: 10%;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+`;
 
 export const LoadingContainer = styled.div`
 	// border: 2px solid #39c7f4;

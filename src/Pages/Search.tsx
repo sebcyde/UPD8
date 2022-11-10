@@ -3,7 +3,7 @@ import { SearchInput, ArticleContainer } from '../Styles/AllComponents';
 // import { Debounce } from '../Functions/Debounce';
 import styled from 'styled-components';
 import { NewsKey } from '../API/Keys';
-import { debounce } from 'debounce';
+// import { debounce } from 'debounce';
 import { Article } from '../Types/Article';
 import axios from 'axios';
 

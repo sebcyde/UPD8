@@ -4,3 +4,8 @@ TopicNews = 'https://newsapi.org/v2/everything?q=Apple&from=2022-10-31&sortBy=po
 
 
 let X = https://newsapi.org/v2/top-headlines?country=us&apiKey=${KEY}
+
+/v2/search?q=Apple&'&countries=US,CA&topic=tech,finance,business,economics,politics,news&ranked_only=true&sort_by=date&page_size=[1:100]&page_size=1
+
+/v2/search?q=Apple&'&countries=US,CA&topic=tech,finance,business,economics,politics,news&ranked_only=true&sort_by=date&page_size=[1:100]&page_size=1&apiKey=${}
+

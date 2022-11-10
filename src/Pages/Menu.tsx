@@ -7,35 +7,35 @@ function Menu() {
 	const navigate = useNavigate();
 
 	const Route = (Location: string) => {
-		navigate(`/${Location}`);
+		navigate(Location);
 	};
 
 	return (
 		<DashboardContainer>
 			<DashboardMenuItem
 				onClick={() => {
-					Route('dashboard');
+					Route('/');
 				}}
 			>
 				Dashboard
 			</DashboardMenuItem>
 			<DashboardMenuItem
 				onClick={() => {
-					Route('search');
+					Route('/search');
 				}}
 			>
 				Search
 			</DashboardMenuItem>
 			<DashboardMenuItem
 				onClick={() => {
-					Route('news');
+					Route('/news');
 				}}
 			>
 				News
 			</DashboardMenuItem>
 			<DashboardMenuItem
 				onClick={() => {
-					Route('Japanese');
+					Route('/japanese');
 				}}
 			>
 				Japanese
@@ -43,7 +43,7 @@ function Menu() {
 
 			<DashboardMenuItem
 				onClick={() => {
-					Route('settings');
+					Route('/settings');
 				}}
 			>
 				Settings

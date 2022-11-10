@@ -112,7 +112,7 @@ function App() {
 						</PullButton>
 						<PullButton
 							onClick={() => {
-								navigate('/');
+								navigate('menu');
 							}}
 						>
 							To Menu
@@ -120,8 +120,8 @@ function App() {
 					</div>
 
 					<Routes>
-						<Route path="/" element={<Menu />} />
-						<Route path="dashboard" element={<Dashboard />} />
+						<Route path="/" element={<Dashboard />} />
+						<Route path="menu" element={<Menu />} />
 						<Route path="password" element={<Password />} />
 						<Route path="settings" element={<Settings />} />
 						<Route path="search" element={<Search />} />
