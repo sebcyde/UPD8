@@ -72,7 +72,7 @@ function App() {
 
 	useEffect(() => {
 		setTimeout(() => {
-			// turn off when not in use
+			// turn off when not in use - also turn off loading
 			// StartUp();
 		}, 1500);
 	}, []);

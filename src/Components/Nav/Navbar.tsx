@@ -1,5 +1,4 @@
 import React from 'react';
-import { NavDropdown } from 'react-bootstrap';
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
@@ -9,7 +8,7 @@ import { Link } from 'react-router-dom';
 const NavStyle = {
 	backgroundColor: 'black',
 	color: 'white',
-	borderBottom: '1px solid green',
+	borderBottom: '1px solid rgba(255,255,255,.55)',
 	display: 'flex',
 };
 
@@ -17,6 +16,7 @@ const NavLogoStyle = {
 	height: 'fit-content',
 	display: 'flex',
 	alignItems: 'center',
+	color: 'rgba(255,255,255,.55)',
 };
 
 const NavItemStyle = {

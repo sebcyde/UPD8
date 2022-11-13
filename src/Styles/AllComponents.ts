@@ -6,7 +6,6 @@ import PullButtonBG from '../Assets/Sci-Fi/Blue/Hud7.png';
 
 export const DashboardHeaderContainer = styled.div`
 	background-color: black;
-
 	width: 100%;
 	display: flex;
 	flex-direction: column;
@@ -14,7 +13,7 @@ export const DashboardHeaderContainer = styled.div`
 	justify-content: center;
 	height: fit-contnet;
 	padding: 10px;
-	border-bottom: 1px solid green;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.55);
 `;
 
 export const LoadingContainer = styled.div`

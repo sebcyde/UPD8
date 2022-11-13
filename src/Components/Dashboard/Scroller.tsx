@@ -7,10 +7,11 @@ function Scroller({ Updates }: Props) {
 		<h1
 			id="scroll-text"
 			style={{
-				fontSize: '22px',
+				fontSize: '18px',
 				height: 'fit-content',
 				whiteSpace: 'nowrap',
 				width: '180vw',
+				margin: '0px',
 			}}
 		>
 			Welcome Back Sebastian. You have {Updates} new updates.
