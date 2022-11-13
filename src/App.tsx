@@ -20,7 +20,7 @@ import axios from 'axios';
 import Search from './Pages/Search';
 import Menu from './Pages/Menu';
 import News from './Pages/News';
-import Japanese from './Pages/Japanese';
+import Japanese from './Pages/Anime';
 import NavBar from './Components/Nav/Navbar';
 // import Translate from './Pages/Translate';
 
