@@ -2,17 +2,22 @@ import React, { useCallback, useEffect, useState } from 'react';
 import { Navigate } from 'react-router-dom';
 import styled from 'styled-components';
 import { RetrieveNews } from '../../API/NewsCatcher';
+import LoadingAnimation from '../Loading/LoadingAnimation';
 
 type Props = {};
-const UpdatesContainer = styled.div``;
+const UpdatesContainer = styled.div`
+	height: 100%;
+`;
 
 function UpdatesSection({}: Props) {
 	const [Timer, setTimer] = useState<number>(0);
 	const [PageView, setPageView] = useState<any[]>();
+	const [Loading, setLoading] = useState(true);
 
 	const Startup = async () => {
 		const Articles = await RetrieveNews(ViewArticle);
 		setPageView(Articles);
+		setLoading(false);
 	};
 
 	const ViewArticle = (ArticleLink: string) => {
@@ -27,9 +32,14 @@ function UpdatesSection({}: Props) {
 
 	return (
 		<UpdatesContainer>
-			Updates Container
-			<button onClick={PullNews}>Pull Articles</button>
-			{PageView ? PageView.map((Article: any) => Article) : null}
+			<button onClick={PullNews} style={{ position: 'fixed', top: '100px' }}>
+				Pull Articles
+			</button>
+			{!Loading ? (
+				PageView!.map((Article: any) => Article)
+			) : (
+				<LoadingAnimation />
+			)}
 		</UpdatesContainer>
 	);
 }

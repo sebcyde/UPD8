@@ -26,11 +26,10 @@ export const LoadingContainer = styled.div`
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
+	overflow: hidden;
+	position: fixed;
+	top: 0px;
 `;
-// background-image: url(${LoadingBG});
-// background-size: 80%;
-// background-position: center;
-// background-repeat: no-repeat;
 
 export const DashboardContainer = styled.div`
 	height: 100%;
