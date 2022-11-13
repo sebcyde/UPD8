@@ -4,7 +4,7 @@ import InputBG from '../Assets/Sci-Fi/Blue/Hud7.png';
 import PullButtonBG from '../Assets/Sci-Fi/Blue/Hud7.png';
 // import LoadingBG from '../Assets/Sci-Fi/Blue/Hud7.png';
 
-export const DashboardHeaderContainer = styled.div`
+export const NavbarScrollerContainer = styled.div`
 	background-color: black;
 	width: 100%;
 	display: flex;
@@ -13,7 +13,8 @@ export const DashboardHeaderContainer = styled.div`
 	justify-content: center;
 	height: fit-contnet;
 	padding: 10px;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.55);
+	border-bottom: 1px solid white;
+	position: relative;
 `;
 
 export const LoadingContainer = styled.div`

@@ -26,7 +26,7 @@ const DateFormatter = (ArticleDate: Date) => {
 const ArticleContainer = styled.div`
 	max-width: 100%;
 	height: 200px;
-	border: 1px solid green;
+	border-bottom: 1px solid green;
 	margin: 5px;
 	padding: 10px;
 	img {

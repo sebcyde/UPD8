@@ -12,6 +12,7 @@ function Scroller({ Updates }: Props) {
 				whiteSpace: 'nowrap',
 				width: '180vw',
 				margin: '0px',
+				color: 'white',
 			}}
 		>
 			Welcome Back Sebastian. You have {Updates} new updates.
