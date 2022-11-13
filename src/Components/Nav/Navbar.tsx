@@ -7,11 +7,6 @@ import { Link, useLocation } from 'react-router-dom';
 import { NavbarScrollerContainer } from '../../Styles/AllComponents';
 import Scroller from './Scroller';
 
-const ContainerStyle = {
-	display: y
-	
-};
-
 const NavStyle = {
 	backgroundColor: 'black',
 	color: 'white',
@@ -51,7 +46,7 @@ function NavBar() {
 	const CurrentLocation = capitalize(useLocation().pathname);
 
 	return (
-		<div style={ContainerStyle}>
+		<div style={{ position: 'sticky', top: '0px' }}>
 			<Navbar
 				variant="dark"
 				expand="lg"
@@ -90,22 +85,22 @@ function NavBar() {
 								Search
 							</Nav.Link>
 
-							<Nav.Link eventKey="1" as={Link} to="news" style={NavItemStyle}>
+							<Nav.Link eventKey="2" as={Link} to="news" style={NavItemStyle}>
 								News
 							</Nav.Link>
 							<Nav.Link
-								eventKey="1"
+								eventKey="3"
 								as={Link}
 								to="japanese"
 								style={NavItemStyle}
 							>
 								Japanese
 							</Nav.Link>
-							<Nav.Link eventKey="1" as={Link} to="/" style={NavItemStyle}>
+							<Nav.Link eventKey="4" as={Link} to="/" style={NavItemStyle}>
 								Dashboard
 							</Nav.Link>
 							<Nav.Link
-								eventKey="1"
+								eventKey="5"
 								as={Link}
 								to="settings"
 								style={NavItemStyle}

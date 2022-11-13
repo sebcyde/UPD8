@@ -10,13 +10,13 @@ function Scroller({ Updates }: Props) {
 				fontSize: '18px',
 				height: 'fit-content',
 				whiteSpace: 'nowrap',
-				width: '180vw',
+				width: '170vw',
 				margin: '0px',
 				color: 'white',
 			}}
 		>
 			Welcome Back Sebastian. You have {Updates} new updates.
-			{Updates > 0 ? ' See below for details.' : ''}
+			{Updates > 0 ? ' Head to the Dashboard for details.' : ''}
 		</h1>
 	);
 }
