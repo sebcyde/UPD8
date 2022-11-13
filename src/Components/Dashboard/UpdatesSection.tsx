@@ -10,7 +10,6 @@ const UpdatesContainer = styled.div`
 `;
 
 function UpdatesSection({}: Props) {
-	const [Timer, setTimer] = useState<number>(0);
 	const [PageView, setPageView] = useState<any[]>();
 	const [Loading, setLoading] = useState(true);
 
@@ -26,9 +25,9 @@ function UpdatesSection({}: Props) {
 
 	const PullNews = () => Startup();
 
-	// useEffect(() => {
-	// 	Startup();
-	// }, []);
+	useEffect(() => {
+		Startup();
+	}, []);
 
 	return (
 		<UpdatesContainer>
