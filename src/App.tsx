@@ -21,6 +21,7 @@ import Search from './Pages/Search';
 import Menu from './Pages/Menu';
 import News from './Pages/News';
 import Japanese from './Pages/Japanese';
+import NavBar from './Components/Nav/Navbar';
 // import Translate from './Pages/Translate';
 
 function App() {
@@ -93,6 +94,7 @@ function App() {
 				<LoadingPage />
 			) : (
 				<>
+					<NavBar />
 					<div
 						style={{
 							marginTop: '20px',
@@ -109,13 +111,6 @@ function App() {
 							}}
 						>
 							Pull Data
-						</PullButton>
-						<PullButton
-							onClick={() => {
-								navigate('menu');
-							}}
-						>
-							To Menu
 						</PullButton>
 					</div>
 
